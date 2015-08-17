@@ -1,21 +1,17 @@
 var playSound = playSound || {} 
 
-// playSound.setup = function(){
-//   document.getElementById('1').addEventListener('click', playSound)
-
 window.onload = function(){
 
 soundManager.setup({
   url: '/swf/',
   onready: function() {
-    //playSound('./sounds/spaceshiphum.mp3') - not necessary to keep playing once it passed test.
-    addEventListeners()
+    //playSound('./sounds/spaceshiphum.mp3') - not necessary to keep playing once it has passed the test.
+    addEventListeners();
     }
   });
 }
 
 function addEventListeners() {
-
   document.getElementById('sound-1').addEventListener('click', function() {
       playSound('spaceshiphum.mp3')
       console.log('hello')
@@ -60,7 +56,7 @@ function addEventListeners() {
       playSound('shutdown.mp3')
       console.log('hello')
   });
-
+  
   document.getElementById('sound-10').addEventListener('click', function() {
       playSound('static.mp3')
       console.log('hello')
@@ -76,6 +72,7 @@ function addEventListeners() {
       console.log('hello')
   });
 }
+
 function playSound(sound) {
   console.log('hi again')
   var mySound = soundManager.createSound({
@@ -86,5 +83,4 @@ function playSound(sound) {
   // }
   });
   mySound.play();
-
 }
